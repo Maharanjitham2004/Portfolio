@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maharanjitham S - Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      overflow-x: hidden;
+      font-size: 18px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.5);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      font-size: 20px;
+    }
+    header nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    header nav a:hover {
+      transform: scale(1.1);
+    }
+    .container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+    }
+    .photo {
+      width: 150px;
+      height: 300px;
+      border-radius: 50%;
+      margin: auto;
+      display: block;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+    .section {
+      margin: 2rem 0;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      position: relative;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    .section:hover::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif');
+      background-size: cover;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    .section h2 {
+      color: #00ffff;
+      font-size: 24px;
+    }
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      animation: rise 5s infinite ease-in;
+    }
+    @keyframes rise {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-800px); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Maharanjitham S</h1>
+    <nav>
+      <a href="#objective">Objective</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#internships">Internships</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <img src="./image/mahaphoto.jpg" alt="Profile" class="photo" />
+
+  <div class="container">
+    <div id="objective" class="section">
+      <h2>Objective</h2>
+      <p>Driven and ambitious recent graduate with a strong academic record in Computer Science and Engineering, looking to apply my skills and knowledge to contribute to the goals and growth of a leading organization.</p>
+    </div>
+
+    <div id="projects" class="section">
+      <h2>Projects</h2>
+      <p><strong>Visionmate:</strong> Smart stick for visually impaired, developed mobile app with voice assistant. <br/>
+      <strong>Child Rights App:</strong> Flutter hackathon project. <br/>
+      <strong>Dyslexia Rehabilitation:</strong> Flask/NLP/HTML based support tool.</p>
+    </div>
+
+    <div id="skills" class="section">
+      <h2>Skills</h2>
+      <p>Java, UI/UX Design, Flutter, HTML, CSS, SQL, JavaScript</p>
+      <p>Soft Skills: Active Learner, Leadership, Team Player</p>
+    </div>
+
+    <div id="internships" class="section">
+      <h2>Internships</h2>
+      <p>UI/UX design at Halo Design Academy, 2023 <br/>
+      Product development at Quantanics, 2022</p>
+    </div>
+
+    <div id="certifications" class="section">
+      <h2>Certifications</h2>
+      <p><strong>Udemy: </strong>Python 3: Programming beginner to Advanced,2024
+      <br><strong>Infosys:</strong> PL-900: Microsoft Power Platform Fundamentals,2024
+                              Java Programming Fundamentals,2022 
+        <br><strong>Skill Rack: </strong>C-50 very easy challenges,2022
+                                 Python-50 very easy challenges,2022, 
+                                 SQL-Basics,2023
+        </p>
+    </div>
+
+    <div id="contact" class="section">
+      <h2>Contact</h2>
+      <p>📞 9384562734 | ✉️ maharanjitham6a@gmail.com <br/>
+      📍 6/1312, Thamarai Street, R.S.Nagar, Alampatti, Virudhunagar <br/>
+      🔗 <a href="https://github.com/Maharanjitham2004" style="color:#00ffff;">GitHub</a> | <a href="https://linkedin.com/in/maharanjitham-78b1212ba" style="color:#00ffff;">LinkedIn</a></p>
+    </div>
+  </div>
+
+  <script>
+    // Bubble animation on section click
+    document.querySelectorAll('.section').forEach(section => {
+      section.addEventListener('click', () => {
+        for (let i = 0; i < 10; i++) {
+          const bubble = document.createElement('div');
+          bubble.className = 'bubble';
+          bubble.style.width = bubble.style.height = Math.random() * 20 + 10 + 'px';
+          bubble.style.left = Math.random() * 100 + '%';
+          bubble.style.bottom = '0';
+          section.appendChild(bubble);
+          setTimeout(() => bubble.remove(), 5000);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
